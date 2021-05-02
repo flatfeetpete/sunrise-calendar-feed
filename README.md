@@ -1,3 +1,5 @@
+# THIS IS AN AWFUL FORK, I'M JUST DOING IT SO I CAN C&P THE RESULT INTO DREAMHOST AND USE GITHUB TO EDIT. I'M AVOIDING THE TZ LOOKUP, SKIPPING HAVING A GOOGLE MAPS KEY
+
 # sunrise
 Display sunset and sunrise times as all day events from an iCalendar feed in Google Calendar, your phone or elsewhere.
 
