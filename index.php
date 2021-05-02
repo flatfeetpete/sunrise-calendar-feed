@@ -9,24 +9,25 @@
 $version = '20150410T000000Z'; // modify this when you make changes in the code!
 
 // include config:
-require_once('./config.php');
+// require_once('./config.php');
 
-// get and set timezone:
-$latitude = param('latitude', $config['default_latitude']);
-$longitude = param('longitude', $config['default_longitude']);
+// get and set timezone: // DEFAULT TO SF
+$latitude = param('latitude',37.774);
+$longitude = param('longitude', -122.419);
 		
-// get and set timezone by latitude and longitude
-$url = "https://maps.googleapis.com/maps/api/timezone/json?location=$latitude,$longitude&timestamp=".time()."&key=".$config['google_timezone_api_key'];
-$json = file_get_contents($url);
-$timezone = json_decode($json);
+// // get and set timezone by latitude and longitude
+// $url = "https://maps.googleapis.com/maps/api/timezone/json?location=$latitude,$longitude&timestamp=".time()."&key=".$config['google_timezone_api_key'];
+// $json = file_get_contents($url);
+// $timezone = json_decode($json);
 
-if ($timezone->status != 'OK')
-{
-	die("ERROR! Cannot detect a timezone\n");
-}
-// else:
+// if ($timezone->status != 'OK')
+// {
+// 	die("ERROR! Cannot detect a timezone\n");
+// }
+// // else:
 
-date_default_timezone_set($timezone->timeZoneId);
+// date_default_timezone_set($timezone->timeZoneId);
+date_default_timezone_set("America/Los_Angeles");
 
 
 // buffer output so if anything fails, it wont display a partial calendar
